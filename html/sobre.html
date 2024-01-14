@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <style>
+/* importizão da vida */
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300&display=swap');
+
+/* Reset */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+}
+
+body{
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+
+/* cabeçalho */
+#cabecalho{
+    background-color: #4a154b;
+    height: 9.2vh;
+    color: snow;
+    display: flex;
+    justify-content: end;
+}
+
+#cabecalho-conteiner{
+    display: flex;
+    align-items: center;
+    gap: 10%;
+    width: 35%;
+}
+
+#cabecalho-conteiner i{
+    transform: scale(1.5);
+    transition: 0.3s;
+    color: #fff;
+}
+
+#cabecalho-conteiner i:hover{
+    transform: scale(2);
+    color: rgb(49, 88, 219);
+}
+
+/* barra de navegação */
+#navBar #menu{ 
+    /* Esse é o menu do Mobile... não mexer */
+    display: none;
+}
+
+#navBar{
+    background-color: #e2e2e2;
+    height: 15vh;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-around;
+    position: sticky;
+    top: 0;
+}
+
+#navBarMenu{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#navBarMenu ul{
+    list-style: none;
+    display: flex;
+    gap: 15vw;
+}
+
+#navBar #navBarMenu a{
+    text-transform: uppercase;
+    transition: 300ms ease-in-out;
+    color: #651c66;
+    display: block;
+}
+
+#navBar #navBarMenu a:hover{
+    color: #6d012b;
+    transform: scale(1.05);
+}
+
+#navBarMenu #btnClose{
+    /* Botão de fechar do menu do Mobile... não mexer */
+    display: none;
+}
+
+
+/* Quadro inicial */
+#banner{
+    background: url(../css/img/persona.png) no-repeat center/cover;
+    background-size: 100%;
+    height: 88vh;
+}
+
+#banner h1{
+    font-size: 50px;
+    color: #2e475d;
+    max-width: 45%;
+    padding: 10rem 0 0 2rem;
+}
+
+/* Missão */
+#mission{
+    width: 100%;
+    height: 88vh;
+    background: url(../css/img/1.jpg) center/cover;
+    display: flex;
+    justify-content: end;
+}
+
+#mission-conteiner{
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 50px 0 0;
+}
+
+#mission-conteiner h2{
+    color: #2e475d;
+    font-size: 27px;
+    padding-bottom: 30px;
+}
+
+#mission-conteiner p{
+    text-align: justify;
+    font-size: 17px;
+    line-height: 22px;
+}
+
+/* História */
+#history{
+    width: 100%;
+    height: 88vh;
+    background: url(../css/img/2.jpg) no-repeat center;
+    background-size: 100%;
+    display: flex;
+}
+
+#history-conteiner{
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+#history-conteiner h2{
+    color: #2e475d;
+    font-size: 27px;
+    padding-bottom: 30px;
+}
+
+#history-conteiner p{
+    text-align: justify;
+    font-size: 17px;
+    line-height: 25px;
+    text-indent: 50px;
+}
+
+/* rodapé */
+#rodape{
+    background-color: #4a154b;
+    color: snow;
+    height: 40vh;
+    width: 100%;
+}
+
+#rodape-conteiner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.infs{
+    height: 75%;    
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0px 12px;
+    position: absolute;
+    left: 20px;
+}
+
+.infs i{
+    transform: scale(1.5);
+    transition: 0.3s;
+    color: #fff;
+}
+
+.infs i:hover{
+    transform: scale(2);
+    color: rgb(49, 88, 219);
+}
+
+.endereco{
+    height: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20%;
+    padding: 0px 5px;
+    box-sizing: border-box;
+}
+
+.direitoReservado{
+    border-top: #e2e2e2 solid 1px;
+    background-color: #4a154b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 7vh;
+    width: 100%;
+}
+
+.direitoReservado p{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: lighter;
+}
+
+/* Seta Pra cima */
+.setaCima{
+    position: fixed;
+    right: 20px;
+    bottom: 50px;
+    color: #4a154b;
+    background-color: #e2e2e2;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+.setaCima:hover{
+    transform: scale(1.1);
+    background-color: #ccc;
+    color: black;
+}
+
+/* RESPONSIVIDADE MOBILE */
+
+@media screen and (max-width: 767px){
+/* cabeçalho */
+#cabecalho-conteiner{
+    width: 100%;
+    gap: 7%;
+    justify-content: center;
+}
+
+#cabecalho-conteiner p{
+    font-size: 13px;
+}
+
+/* navbar */
+#navBar{
+    position: static;
+}
+
+#navBar #menu{
+    display: block;
+    background: none;
+    border: none;
+}
+
+#navBar #menu i{
+    font-size: 10vw;
+}
+
+#navBarMenu{
+    background-color: #651c66;
+    height: 100vh;
+    width: 70%;
+    position: fixed;
+    right: -70%;
+    top: 0;
+    transition: 300ms ease-in-out;
+    z-index: 2;
+}
+
+#navBar #btnClose{
+    display: block;
+    background: none;
+    border: none;
+    position: absolute;
+    font-size: 8vw;
+    color: snow;
+    top: 20px;
+    left: 20px;
+}
+
+#navBarMenu ul{
+    flex-direction: column;
+    gap: 8vh;
+    width: 100%;
+}
+
+#navBar #navBarMenu a{
+    text-align: end;
+    color: snow;
+    padding: 20px 15px;
+}
+
+#navBar #navBarMenu a:hover{
+    background-color: #4a154b;
+    color: snow;
+    transform: scale(1);
+}
+
+/* Quadro inicial */
+#banner{
+    background-position: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+}
+
+#banner h1{
+    max-width: 70%;
+    font-size: 3.5rem;
+    padding: 0px;
+    text-align: justify;
+}
+
+/* missão */
+#mission{
+    background-image: none;
+   background-color: #e2e2e2; 
+}
+
+#mission-conteiner{
+    max-width: 90%
+}
+
+/* História */
+#history{
+    background-position: 60vw;
+}
+
+#history-conteiner{
+    max-width: 100%;
+    justify-content: start;
+}
+
+
+/* Rodapé */
+#rodape{
+    height: 50vh;
+}
+
+#rodape-conteiner{
+    flex-direction: column;
+}
+
+.infs{
+    position: static;
+    width: 100%;
+    height: 90%;
+    padding-top: 15px;
+}
+
+.endereco{
+    justify-content: center;
+}
+
+.endereco p{
+    text-align: center;
+}
+
+.direitoReservado p{
+    text-align: center;
+}#rodape{
+    height: 50vh;
+}
+
+#rodape-conteiner{
+    flex-direction: column;
+}
+
+.infs{
+    position: static;
+    width: 100%;
+    height: 90%;
+    padding-top: 15px;
+}
+
+.endereco{
+    justify-content: center;
+}
+
+.endereco p{
+    text-align: center;
+}
+
+.direitoReservado p{
+    text-align: center;
+}
+}
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nós</title>
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header id="cabecalho">
+        <div id="cabecalho-conteiner">
+            <p>Fone 11 2579-0244 / WhatsApp 11 94084-4660</p>
+            <a target="_blank" href="https://www.facebook.com/AcaonavilaPirajussara/"><i class="fa-brands fa-facebook fa-sm"></i></a>
+        </div>
+    </header>
+
+    <!-- Barra de navegação -->
+    <nav id="navBar">
+            <img src="../css/img/logo-curta-removebg-preview.png" alt="Uma árvore roxa">
+            <button id="menu"><i class="fa-solid fa-bars"></i></button>
+            <div id="navBarMenu">
+                <button id="btnClose"><i class="fa-solid fa-xmark"></i></button>                
+                <ul>
+                    <li><a href="./index.html">início</a></li>
+                    <li><a href="#mission">missão</a></li>
+                    <li><a href="#history">História</a></li>
+                </ul>
+            </div>
+    </nav>
+
+    <!-- Quadro inicial -->
+    <section id="banner">
+            <h1>Ajudando dezenas de crianças a crescer melhor.</h1>
+    </section>
+
+    <!-- Missão -->
+    <section id="mission">
+        <div id="mission-conteiner">
+            <h2>Nossa Missão</h2>
+            <p>Na nossa ONG, nossa missão é inspirar e capacitar indivíduos através da semeadura de sabedoria e conhecimento. Acreditamos que a educação é a base para a transformação social e buscamos promover o acesso igualitário a oportunidades educacionais de qualidade. <br><br>
+
+                Nosso objetivo é plantar as sementes do conhecimento em comunidades carentes, oferecendo programas educacionais abrangentes e recursos necessários para o desenvolvimento integral dos indivíduos. Buscamos despertar o potencial de cada pessoa, capacitando-as a superar desafios, alcançar seus sonhos e contribuir para um mundo melhor.</p>
+        </div>
+    </section>
+
+    <!-- História -->
+    <section id="history">
+        <div id="history-conteiner">
+            <h2>Nossa História</h2>
+            <p>No ano de 2017, a pedagoga Maria Gizélia teve uma visão e um sonho de trabalhar a transformação social por meio da educação, esporte e artes. E os sonho são como combustíveis do coração. Em junho de 2017, Gizélia encontrou o professor de Jiu-jitsu, Daniel Corrêa, morador da região com desejo de somar. O prédio não tinha condições de uso, mas através de parcerias Deus trouxe os recursos para que todas as reformas fosse realizadas. E, em agosto de 2017 o Instituto Jacarandá (antigo Projeto Ação na Vila) começou a funcionar com aulas de reforço escolar (português, matemática e religião), jiu-jitsu, Karatê e aulas de músicas.</p>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer id="rodape">
+        <div id="rodape-conteiner">
+            <div class="infs">
+                <h3>Infomaçoes</h3>
+                <p>E-mail: ipivilasonia@gmail.com</p>
+                <p>Fone 11 2579-0244</p>
+                <p>WhatsApp 11 94084-4660</p>
+                <a target="_blank" style="max-width: 20px;" href="https://www.facebook.com/AcaonavilaPirajussara/"><i class="fa-brands fa-facebook fa-sm"></i></a>
+            </div>
+            <div class="endereco">
+                <h3>Endereço</h3>
+                <p>Av.Jacarandá, 190, Taboão da Serra, SP, Brazil, CEP: 006774-005</p>
+            </div>
+        </div>
+        <div class="direitoReservado">            
+            <p>© 2023 Todos os direitos reservados - Instituto Jacarandá</p>
+        </div>
+    </footer>
+
+    <!-- Seta pra cima -->
+    <a class="setaCima" href="#cabecalho"><i style="transform: scale(1.2);" class="fa-solid fa-arrow-up"></i></a>
+    <!-- Meu Js -->
+    <script>
+        // Funcionamento do menu
+        function menuWorking(){
+            const btnMenu = document.querySelector("#menu");
+            const menu = document.querySelector("#navBarMenu");
+            const btnCloseMenu = document.querySelector("#btnClose");
+            const links = menu.querySelectorAll("a");
+
+            btnMenu.addEventListener("click", () =>{
+                menu.style.right = "0";
+            })
+
+            btnCloseMenu.addEventListener("click", () =>{
+                menu.style.right = "-70%";
+            })
+
+            for(let link of links){
+                link.addEventListener("click", () =>{
+                    menu.style.right = "-70%";
+                })
+            }
+        }
+
+        menuWorking();
+
+
+        // Seta Sumindo quando chega no top
+        function arrowGone(){
+            const upArrow = document.querySelector(".setaCima");
+            
+            window.addEventListener("scroll", () => {
+            if(scrollY === 0){
+            upArrow.style.display = "none";
+            } else{
+            upArrow.style.display = "flex";
+            }
+        });
+        }
+
+        arrowGone();
+    </script>
+    <!-- biblioteca icones -->
+  <script src="https://kit.fontawesome.com/8b450a9b91.js" crossorigin="anonymous"></script>
+</body>
+</html>

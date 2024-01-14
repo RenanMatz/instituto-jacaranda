@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividades</title>
+    <style>
+/* importizão da vida */
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300&display=swap');
+
+/* Reset */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+}
+
+body{
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+/* cabeçalho */
+#cabecalho{
+    background-color: #4a154b;
+    height: 9.2vh;
+    color: snow;
+    display: flex;
+    justify-content: end;
+}
+
+#cabecalho-conteiner{
+    display: flex;
+    align-items: center;
+    gap: 10%;
+    width: 35%;
+}
+
+#cabecalho-conteiner i{
+    transform: scale(1.5);
+    transition: 0.3s;
+    color: #fff;
+}
+
+#cabecalho-conteiner i:hover{
+    transform: scale(2);
+    color: rgb(49, 88, 219);
+}
+
+/* barra de navegação */
+#navBar #menu{ 
+    /* Esse é o menu do Mobile... não mexer */
+    display: none;
+}
+
+#navBar{
+    background-color: #e2e2e2;
+    height: 15vh;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-around;
+    position: sticky;
+    top: 0;
+}
+
+#navBarMenu{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#navBarMenu ul{
+    list-style: none;
+    display: flex;
+    gap: 15vh;
+}
+
+#navBar #navBarMenu a{
+    text-transform: uppercase;
+    transition: 300ms ease-in-out;
+    color: #651c66;
+    display: block;
+}
+
+#navBar #navBarMenu a:hover{
+    color: #6d012b;
+    transform: scale(1.05);
+}
+
+#navBarMenu #btnClose{
+    /* Botão de fechar do menu do Mobile... não mexer */
+    display: none;
+}
+
+/* Aulas de musica */
+#music-classes{
+    background: url(../css/img/fundoMusica.png) 0 0/cover; 
+    background-size: 100%;
+    width: 100%;
+    height: 88vh;
+    display: flex;
+}
+
+.classes-conteiner{
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+
+.titles{
+    color: #2e475d;
+    padding: 0 0 30px 0;
+    font-size: 27px;
+}
+
+.ps{
+    font-size: 17px;
+    line-height: 25px;
+    text-align: justify;
+}
+
+/* Galeria das aulas de musica */
+.classes-galery{
+    width: 100%;
+    height: 88vh;
+    background-color: #e6c619;
+    width: 100%;
+}
+
+.title-galery{
+    text-align: center;
+    padding: 30px 0 30px 0;
+    color: #23537e;
+    font-size: 2rem;
+}
+
+.galery-conteiner{
+    display: flex;
+    gap: 17px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.galery-conteiner img{
+    width: 38vh;
+    height: 31vh;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 5px;
+}
+
+/* Aulas de karatê */
+#karate-classes{
+    background: url(../css/img/fundoKarate.png) center/cover;
+    background-size: 100%;
+    height: 88vh;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+#karate-conteiner{
+    max-width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 60px;
+}
+
+/* Aulas de reforço */
+#extra-classes{
+    width: 100%;
+    height: 88vh;
+    background: url(../css/img/fundoReforco.png) center/cover;
+    background-size: 100%;
+    display: flex;
+}
+
+/* rodapé */
+#rodape{
+    background-color: #4a154b;
+    color: snow;
+    height: 40vh;
+    width: 100%;
+}
+
+#rodape-conteiner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.infs{
+    height: 75%;    
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0px 12px;
+    position: absolute;
+    left: 20px;
+}
+
+.infs i{
+    transform: scale(1.5);
+    transition: 0.3s;
+    color: #fff;
+}
+
+.infs i:hover{
+    transform: scale(2);
+    color: rgb(49, 88, 219);
+}
+
+.endereco{
+    height: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20%;
+    padding: 0px 5px;
+    box-sizing: border-box;
+}
+
+.direitoReservado{
+    border-top: #e2e2e2 solid 1px;
+    background-color: #4a154b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 7vh;
+    width: 100%;
+}
+
+.direitoReservado p{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: lighter;
+}
+
+/* Seta Pra cima */
+.setaCima{
+    position: fixed;
+    right: 20px;
+    bottom: 50px;
+    color: #4a154b;
+    background-color: #e2e2e2;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+.setaCima:hover{
+    transform: scale(1.1);
+    background-color: #ccc;
+    color: black;
+}
+
+/* RESPONSIVIDADE MOBILE */
+@media screen and (max-width: 767px){
+/* cabeçalho */
+#cabecalho-conteiner{
+    width: 100%;
+    gap: 7%;
+    justify-content: center;
+}
+
+#cabecalho-conteiner p{
+    font-size: 13px;
+}
+
+/* navbar */
+#navBar{
+    position: static;
+}
+
+#navBar #menu{
+    display: block;
+    background: none;
+    border: none;
+}
+
+#navBar #menu i{
+    font-size: 10vw;
+}
+
+#navBarMenu{
+    background-color: #651c66;
+    height: 100vh;
+    width: 70%;
+    position: fixed;
+    right: -70%;
+    top: 0;
+    transition: 300ms ease-in-out;
+    z-index: 2;
+}
+
+#navBar #btnClose{
+    display: block;
+    background: none;
+    border: none;
+    position: absolute;
+    font-size: 8vw;
+    color: snow;
+    top: 20px;
+    left: 20px;
+}
+
+#navBarMenu ul{
+    flex-direction: column;
+    gap: 8vh;
+    width: 100%;
+}
+
+#navBar #navBarMenu a{
+    text-align: end;
+    color: snow;
+    padding: 20px 15px;
+}
+
+#navBar #navBarMenu a:hover{
+    background-color: #4a154b;
+    color: snow;
+    transform: scale(1);
+}
+
+/* aulas de música */
+#music-classes{
+    background-repeat: no-repeat;
+    background-position: -83vw 45vh;
+    background-size: 180%;
+}
+
+.classes-conteiner{
+    max-width: 100%;
+    justify-content: start;
+}
+
+.ppart2{
+    display: none;
+}
+
+/* galeriaS */
+.classes-galery{
+    height: 50vh;
+}
+
+.galery-conteiner{
+    /* Essa class engloba todas as outras galerias */
+    flex-flow: row nowrap;
+    height: 70%;
+    padding: 0px 2vw;
+    overflow-x: auto;
+    justify-content: flex-start;
+}
+
+.galery-conteiner img{
+    width: 33vh;
+    height: 25vh;
+}
+
+/* aulas de karatê */
+#karate-classes{
+    padding:  30px 30px 0 30px;
+    align-items: start;
+    background-repeat: no-repeat;
+    background-size: 200%;
+    background-position: 5vw 45vh;
+}
+
+#karate-conteiner{
+    max-width: 100%;
+    margin-right: 0;
+}
+
+/* aulas de reforço */
+#extra-classes{
+    background-repeat: no-repeat;
+    background-size: 200%;
+    background-position: -110vw 40vh;
+}
+
+
+/* Rodapé */
+#rodape{
+    height: 50vh;
+}
+
+#rodape-conteiner{
+    flex-direction: column;
+}
+
+.infs{
+    position: static;
+    width: 100%;
+    height: 90%;
+    padding-top: 15px;
+}
+
+.endereco{
+    justify-content: center;
+}
+
+.endereco p{
+    text-align: center;
+}
+
+.direitoReservado p{
+    text-align: center;
+}
+}
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header id="cabecalho">
+        <div id="cabecalho-conteiner">
+            <p>Fone 11 2579-0244 / WhatsApp 11 94084-4660</p>
+            <a target="_blank" href="https://www.facebook.com/AcaonavilaPirajussara/"><i class="fa-brands fa-facebook fa-sm"></i></a>
+        </div>
+    </header>
+
+    <!-- Barra de navegação -->
+    <nav id="navBar">
+            <img src="../css/img/logo-curta-removebg-preview.png" alt="Uma árvore roxa">
+            <button id="menu"><i class="fa-solid fa-bars"></i></button>
+            <div id="navBarMenu">
+                <button id="btnClose"><i class="fa-solid fa-xmark"></i></button>                
+                <ul>
+                    <li><a href="index.html">início</a></li>
+                    <li><a href="#music-classes">música</a></li>
+                    <li><a href="#karate-classes">karatê</a></li>
+                    <li><a href="#extra-classes">reforço</a></li>
+                </ul>
+            </div>
+    </nav>
+    
+    <!-- Aulas de musica -->
+    <section id="music-classes">
+        <div class="classes-conteiner">
+            <h2 class="titles">Aulas de música</h2>
+            <p class="ps">A música é uma linguagem universal que desperta emoções, estimula a criatividade e promove um senso de comunidade. Quando se trata do desenvolvimento das crianças, as aulas de música se revelam como uma atividade extracurricular valiosa, capaz de proporcionar uma série de benefícios fundamentais. <br><br>
+
+                <span class="ppart2">Em primeiro lugar, as aulas de música contribuem para o desenvolvimento cognitivo das crianças. Estudos científicos têm demonstrado que a prática musical estimula áreas específicas do cérebro, aprimorando habilidades como a memória, a concentração e o raciocínio lógico. Além disso, aprender a tocar um instrumento ou cantar requer disciplina e dedicação, ensinando as crianças a estabelecer metas, persistir diante de desafios e desenvolver habilidades de resolução de problemas.</span></p>
+        </div>
+    </section>
+
+    <!-- galeria de musica -->
+    <section class="classes-galery">
+        <h1 class="title-galery">Galeria de Música</h1>
+        <div class="galery-conteiner">
+            <img src="../css/img/musica1.jpg" alt="foto de tutor de musica e alunos">
+            
+            <img src="../css/img/musica2.jpg" alt="tutor de musica observando prática de alunos">
+            
+            <img src="../css/img/musica3.jpg" alt="tutor de musica e alunos comemorando com seus violãos para cima">
+            
+            <img src="../css/img/musica4.jpg" alt="tutor de musica e seus alunos fazendo pose">
+            
+            <img src="../css/img/musica5.jpg" alt="tutor de musica ensinando a um garotinho tocar violão">
+            
+            <img src="../css/img/musica6.jpg" alt="tutor de musica ensinado a tocar bateria">
+            
+            <img src="../css/img/musica7.jpg" alt="tutor de musica ensinando garoto">
+
+            <img src="../css/img/musica8.jpg" alt="tutor de musica ensinando garota">
+
+            <img src="../css/img/musica9.jpg" alt="tutor de musica ensinando garoto">
+
+            <img src="../css/img/musica10.jpg" alt="garoto tocando bateria">
+        </div>
+    </section>
+
+    <!-- Aulas de karatê -->
+    <section id="karate-classes">
+        <div id="karate-conteiner">
+            <h2 class="titles">Aulas de karatê</h2>
+            <p class="ps">As artes marciais têm uma história rica e profunda, enraizada em culturas antigas que valorizam a disciplina, o respeito e o autoaperfeiçoamento. Quando se trata do desenvolvimento das crianças, as aulas de artes marciais surgem como uma atividade extracurricular significativa, capaz de proporcionar uma série de benefícios fundamentais. <br><br>
+
+                <span class="ppart2">Em primeiro lugar, as aulas de artes marciais contribuem para o desenvolvimento físico das crianças. A prática regular dessas atividades ajuda a melhorar a coordenação motora, o equilíbrio, a flexibilidade e a força muscular. Além disso, as artes marciais incentivam a adoção de um estilo de vida ativo, contribuindo para a saúde geral e prevenindo problemas relacionados ao sedentarismo.</span></p>
+        </div>
+    </section>
+
+    <!-- galeria das aulas de karatê -->
+
+    <section class="classes-galery">
+        <h1 class="title-galery">Galeria de Karatê</h1>
+        <div class="galery-conteiner">
+            <img src="../css/img/karate1.jpg" alt="crianças fazendo pose de karate">
+
+            <img src="../css/img/karate10.jpg" alt="crianças de kimono fiazendo roda e dando as mãos">
+
+            <img src="../css/img/karate2.jpg" alt="crianças e tutor de karate treinando">
+
+            <img src="../css/img/karate3.jpg" alt="alunos de karatê de joelho pra foto">
+
+            <img src="../css/img/karate4.jpg" alt="tutora de karatê e crianças">
+
+            <img src="../css/img/karate5.jpg" alt="tutora e aluno de karatê fazendo uma luta amistosa">
+
+            <img src="../css/img/karate8.jpg" alt="tutor de karatê e alunos tirando foto">
+
+            <img src="../css/img/karate6.jpg" alt="alunos e tutor de karatê fazendo pose pra foto">
+
+            <img src="../css/img/karate7.jpg" alt="foto dos tutores de karatê">
+
+            <img src="../css/img/karate9.jpg" alt="alunos de karatê">
+        </div>
+    </section>
+
+    <!-- Aulas de Reforço -->
+    <section id="extra-classes">
+        <div class="classes-conteiner">
+            <h1 class="titles">Aulas de reforço</h1>
+            <p class="ps">As aulas de reforço são uma atividade extracurricular fundamental para auxiliar as crianças em seu processo de aprendizagem e promover um desenvolvimento acadêmico sólido. Elas oferecem suporte individualizado e direcionado, possibilitando que as crianças fortaleçam suas habilidades e superem dificuldades específicas. <br><br>
+
+                <span class="ppart2">Em primeiro lugar, as aulas de reforço contribuem para o desenvolvimento cognitivo das crianças. Ao oferecer uma abordagem personalizada e adaptada às necessidades de cada aluno, essas aulas proporcionam a oportunidade de consolidar conceitos, revisar conteúdos e preencher lacunas de conhecimento. Isso fortalece as bases acadêmicas, melhora a compreensão dos temas estudados e aumenta a confiança dos alunos em sua capacidade de aprender e progredir.</span></p>
+        </div>
+    </section>
+
+    <!-- Galeria das aulas de refoço -->
+    <section class="classes-galery">
+        <h1 class="title-galery">Galeria das aulas de Reforço</h1>
+        <div class="galery-conteiner">
+            <img src="../css/img/reforco1.jpg" alt="professora ensinando crianças">
+
+            <img src="../css/img/reforco2.jpg" alt="professora na lousa ensinando crianças">
+            
+            <img src="../css/img/reforco3.jpg" alt="professora na lousa ensinando crianças mas imagem ta embaçada">
+
+            <img src="../css/img/reforco4.jpg" alt="duas crianças, uma dando joinha e outra com lapis na mão">
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    
+    <footer id="rodape">
+        <div id="rodape-conteiner">
+            <div class="infs">
+                <h3>Infomaçoes</h3>
+                <p>E-mail: ipivilasonia@gmail.com</p>
+                <p>Fone 11 2579-0244</p>
+                <p>WhatsApp 11 94084-4660</p>
+                <a target="_blank" style="max-width: 20px;" href="https://www.facebook.com/AcaonavilaPirajussara/"><i class="fa-brands fa-facebook fa-sm"></i></a>
+            </div>
+            <div class="endereco">
+                <h3>Endereço</h3>
+                <p>Av.Jacarandá, 190, Taboão da Serra, SP, Brazil, CEP: 006774-005</p>
+            </div>
+        </div>
+        <div class="direitoReservado">            
+            <p>© 2023 Todos os direitos reservados - Instituto Jacarandá</p>
+        </div>
+    </footer>
+
+    <!-- Seta pra cima -->
+    <a class="setaCima" href="#cabecalho"><i style="transform: scale(1.2);" class="fa-solid fa-arrow-up"></i></a>
+
+    <!-- Meu js -->
+    <script>
+        // Funcionamento do menu
+        function menuWorking(){
+            const btnMenu = document.querySelector("#menu");
+            const menu = document.querySelector("#navBarMenu");
+            const btnCloseMenu = document.querySelector("#btnClose");
+            const links = menu.querySelectorAll("a");
+
+            btnMenu.addEventListener("click", () =>{
+                menu.style.right = "0";
+            })
+
+            btnCloseMenu.addEventListener("click", () =>{
+                menu.style.right = "-70%";
+            })
+
+            for(let link of links){
+                link.addEventListener("click", () =>{
+                    menu.style.right = "-70%";
+                })
+            }
+        }
+
+        menuWorking();
+
+
+        // Seta Sumindo quando chega no top
+        function arrowGone(){
+            const upArrow = document.querySelector(".setaCima");
+            
+            window.addEventListener("scroll", () => {
+            if(scrollY === 0){
+            upArrow.style.display = "none";
+            } else{
+            upArrow.style.display = "flex";
+            }
+        });
+        }
+
+        arrowGone();
+    </script>
+    <!-- biblioteca icones -->
+    <script src="https://kit.fontawesome.com/8b450a9b91.js" crossorigin="anonymous"></script>
+</body>
+</html>

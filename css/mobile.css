@@ -1,0 +1,160 @@
+/* cabeçalho */
+#cabecalho-conteiner{
+    width: 100%;
+    gap: 7%;
+    justify-content: center;
+}
+
+#cabecalho-conteiner p{
+    font-size: 13px;
+}
+
+/* navbar */
+#navBar{
+    position: static;
+}
+
+#navBar #menu{
+    display: block;
+    background: none;
+    border: none;
+}
+
+#navBar #menu i{
+    font-size: 10vw;
+}
+
+#navBarMenu{
+    background-color: #651c66;
+    height: 100vh;
+    width: 70%;
+    position: fixed;
+    right: -70%;
+    top: 0;
+    transition: 300ms ease-in-out;
+    z-index: 2;
+}
+
+#navBar #btnClose{
+    display: block;
+    background: none;
+    border: none;
+    position: absolute;
+    font-size: 8vw;
+    color: snow;
+    top: 20px;
+    left: 20px;
+}
+
+#navBarMenu ul{
+    flex-direction: column;
+    gap: 8vh;
+    width: 100%;
+}
+
+#navBar #navBarMenu a{
+    text-align: end;
+    color: snow;
+    padding: 20px 15px;
+}
+
+#navBar #navBarMenu a:hover{
+    background-color: #4a154b;
+    color: snow;
+    transform: scale(1);
+}
+
+
+/* Carrossel */
+.quadro{
+    height: 55vh;
+}
+
+.container{
+    max-width: 95%;
+}
+
+.arrow-left, .arrow-right{
+    color: #ccc;
+}
+
+.arrow-left:hover, .arrow-right:hover{
+    color: #888;
+}
+
+.item{
+    height: 50vw;
+}
+
+
+/* Sobre nós */
+#sobre{
+    background-position: 0 -300px;
+}
+
+#sobre-conteiner{
+    width: 100%;
+}
+
+/* Atividades/aulas extacurriculares */
+#classes{
+    box-sizing: border-box;
+}
+
+#classes-conteiner{
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+#classes-conteiner div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#classes-conteiner p{
+    font-size: 16px;
+}
+
+#classes-conteiner img{
+    width: 45vw;
+    height: 22vh;
+}
+
+/* como ajudar */
+#donation-container{
+    max-width: 90%;
+}
+
+#donation-container li{
+    font-size: 20px;
+}
+
+/* Rodapé */
+#rodape{
+    height: 50vh;
+}
+
+#rodape-conteiner{
+    flex-direction: column;
+}
+
+.infs{
+    position: static;
+    width: 100%;
+    height: 90%;
+    padding-top: 15px;
+}
+
+.endereco{
+    justify-content: center;
+}
+
+.endereco p{
+    text-align: center;
+}
+
+.direitoReservado p{
+    text-align: center;
+}
