@@ -3,7 +3,7 @@ function arrowLeft(){
   const upArrow = document.querySelector(".setaCima");
 
   window.addEventListener("scroll", () => {
-    if(scrollY === 0){
+    if(scrollY < 443){
       upArrow.style.display = "none";
     } else{
       upArrow.style.display = "flex";
